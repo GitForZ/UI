@@ -2,6 +2,10 @@
 
 include 'connect.php';
 
+$sqlConn = new SQLConnection(); 
+$sqlConn->connection(); 
+$link = $sqlConn->link; 
+
 $username = $_POST["username"];
 $password = $_POST["password"];
 
