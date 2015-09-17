@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+<h1>Registration</h1>
+ 
+
+<section>
+<h3>Enter your details:</h3>
+<form method="post" action="scripts/registration.php">
+<label>First name:</label>
+<input type="text" name="firstname" required>
+<br><br>
+<label>Last name:</label>
+<input type="text" name="lastname" required>
+<br><br>
+<label>Username:</label>
+<input type="text" name="username" required>
+<br><br>
+<label>Password:</label>
+<input type="password" name="password" required>
+<br><br>
+<label>Email:</label>
+<input type="email" name="email" required>
+<br><br>
+<label>Date of Birth:</label>
+<input type="test" name="month" placeholder="mm" maxlength="2" size="2" required>
+<input type="test" name="day" placeholder="dd" maxlength="2" size="2" required>
+<input type="test" name="year" placeholder="yyyy" maxlength="4" size="4" required>
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</section>
+
+
+</body>
+</html>
