@@ -12,7 +12,6 @@ $link = $sqlConn->link;
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-echo "<p> Your username was $username"; 
 
 
 $statement = $link->prepare("SELECT username,password FROM users where username = :usr");
@@ -26,16 +25,34 @@ $db_pass = $result[0][1];
 
 
 
-if ($statement) {
-	echo "<p>Successful query.</p>"; 
-} else {
-	echo "<p>Error in query.</p>"; 
+if (!$statement) {
+    echo "<p>Error in query.</p>"; 
 }
 
 if ($db_user === $username && $db_pass === $password) {
-	echo "<p>Successful authentication.</p>"; 
-} else {
-	echo "<p>Authentication error.</p>"; 
+    ob_start(); // ensures anything dumped out will be caught
+
+// do stuff here
+$url = 'http://example.com/thankyou.php'; // this can be set based on whatever
+
+// clear out the output buffer
+while (ob_get_status()) 
+{
+    ob_end_clean();
 }
 
-?> 
+    header('Location: ../budget.html');
+} else {
+    echo "<p>Authentication error.</p>"; 
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+</body>
+</html>
