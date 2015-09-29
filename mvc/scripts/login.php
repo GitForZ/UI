@@ -1,4 +1,5 @@
 <?php 
+session_start(); 
 
 function __autoload($class_name) 
 {
@@ -24,35 +25,12 @@ $db_user = $result[0][0];
 $db_pass = $result[0][1]; 
 
 
-
-if (!$statement) {
-    echo "<p>Error in query.</p>"; 
-}
-
 if ($db_user === $username && $db_pass === $password) {
-    ob_start(); // ensures anything dumped out will be caught
-
-// do stuff here
-$url = 'http://example.com/thankyou.php'; // this can be set based on whatever
-
-// clear out the output buffer
-while (ob_get_status()) 
-{
-    ob_end_clean();
-}
-
-    header('Location: ../budget.html');
+	$_SESSION["sessionUser"] = $username;
+     header('Location: ../budget.php');
+    exit(); 
 } else {
     echo "<p>Authentication error.</p>"; 
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-
-<body>
-</body>
-</html>

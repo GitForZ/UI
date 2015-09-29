@@ -1,3 +1,9 @@
+<?php  
+class HomeView {
+	
+  public static function show() {  	
+?> 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,12 +11,12 @@
   <title>WhatsMyQuota</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/mvc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src=
   "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src=
   "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/mvc/styles/style.css">
 </head>
 
 <body>
@@ -18,7 +24,7 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-4"><img alt="Cinque Terre" class=
-        "img-circle img-responsive" height="230" src="KR3.jpg" width=
+        "img-circle img-responsive" height="230" src="/mvc/images/KR3.jpg" width=
         "230"></div>
 
         <div class="col-md-8">
@@ -65,11 +71,11 @@
         <div class="col-md-4">
           <h3>Login:</h3>
 
-          <form action="scripts/login.php" method="post">
-            <label>Username:</label> <input name="username" required="" type=
+          <form action="controllers/login.php" method="post">
+            <label>Username:</label> <input name="username" required type=
             "text"><br>
             <br>
-            <label>Password:</label> <input name="password" required="" type=
+            <label>Password:</label> <input name="password" required type=
             "password"><br>
             <br>
             <input type="submit" value="Submit">
@@ -79,27 +85,27 @@
         <div class="col-md-4">
           <h3>Sign Up Here</h3>
 
-          <form action="scripts/registration.php" method="post">
-            <label>First name:</label> <input name="firstname" required=""
+          <form action="controllers/registration.php" method="post">
+            <label>First name:</label> <input name="firstname" required
             type="text"><br>
             <br>
-            <label>Last name:</label> <input name="lastname" required="" type=
+            <label>Last name:</label> <input name="lastname" required type=
             "text"><br>
             <br>
-            <label>Username:</label> <input name="username" required="" type=
+            <label>Username:</label> <input name="username" required type=
             "text"><br>
             <br>
-            <label>Password:</label> <input name="password" required="" type=
+            <label>Password:</label> <input name="password" required type=
             "password"><br>
             <br>
-            <label>Email:</label> <input name="email" required="" type=
+            <label>Email:</label> <input name="email" required type=
             "email"><br>
             <br>
             <label>Date of Birth:</label> <input maxlength="2" name="month"
-            placeholder="mm" required="" size="2" type="test">
-            <input maxlength="2" name="day" placeholder="dd" required="" size=
+            placeholder="mm" required size="2" type="test">
+            <input maxlength="2" name="day" placeholder="dd" required size=
             "2" type="test"> <input maxlength="4" name="year" placeholder=
-            "yyyy" required="" size="4" type="test"><br>
+            "yyyy" required size="4" type="test"><br>
             <br>
             <input type="submit" value="Submit">
           </form>
@@ -110,4 +116,12 @@
     </div>
   </div>
 </body>
+
+
+
 </html>
+
+<?php
+  }
+}
+?>

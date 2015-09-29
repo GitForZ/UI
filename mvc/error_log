@@ -1,0 +1,41 @@
+[22-Sep-2015 23:36:09 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:36:51 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:37:05 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:37:05 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:37:32 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class BudgetView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('BudgetView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:37:39 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:39:27 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:39:27 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:40:17 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:40:17 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:40:21 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[22-Sep-2015 23:40:21 UTC] PHP Fatal error:  Class 'HomeView' not found in /home/meestermarcus/public_html/mvc/index.php on line 18
+[25-Sep-2015 15:52:58 UTC] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class HomeView could not be loaded' in /home/meestermarcus/public_html/mvc/index.php:18
+Stack trace:
+#0 /home/meestermarcus/public_html/mvc/index.php(18): spl_autoload('HomeView')
+#1 {main}
+  thrown in /home/meestermarcus/public_html/mvc/index.php on line 18
