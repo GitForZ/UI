@@ -2,4 +2,6 @@ Roberto Vasquez - Views
 
 Marcus Lorenzana - Models
 
-Zach Salazar - Controllers
+Zach Salazar - Views/Controllers
+
+Iker Bilbatua - Controllers/Models
