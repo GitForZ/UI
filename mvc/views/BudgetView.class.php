@@ -32,7 +32,7 @@ echo "Welcome " . $_SESSION["sessionUser"] . "!<br>"; ?>
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-4" id="month">
-          <h3>September 2015</h3>
+          <h3>October 2015</h3>
 
           <form action="../action_page.php">
             <table border="0">
