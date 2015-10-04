@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/contact', function () {
    return view('pages.contact'); 
 });
+
+Route::get('/budget',function(){
+	return view('pages.BudgetView');
+});
