@@ -1,5 +1,0 @@
-[14-Sep-2015 15:32:51 UTC] PHP Fatal error:  Class 'SQLConnection' not found in /home/meestermarcus/public_html/autoload/scripts/registration.php on line 9
-[14-Sep-2015 15:40:53 UTC] PHP Fatal error:  Class 'SQLConnection' not found in /home/meestermarcus/public_html/autoload/scripts/registration.php on line 9
-[14-Sep-2015 15:40:58 UTC] PHP Fatal error:  Class 'SQLConnection' not found in /home/meestermarcus/public_html/autoload/scripts/registration.php on line 9
-[14-Sep-2015 15:41:20 UTC] PHP Fatal error:  Class 'SQLConnection' not found in /home/meestermarcus/public_html/autoload/scripts/registration.php on line 9
-[14-Sep-2015 15:45:36 UTC] PHP Fatal error:  Class 'SQLConnection' not found in /home/meestermarcus/public_html/autoload/scripts/registration.php on line 9
