@@ -13,9 +13,7 @@
 </head>
 
 <body>
-<?php
-session_start(); 
-echo "Welcome " . $_SESSION["sessionUser"] . "!<br>"; ?>
+
 <a href="../controllers/logout.php">Logout</a>
 <br>
   <h1>Budget</h1>
