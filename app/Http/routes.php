@@ -1,16 +1,15 @@
 <?php
-
-Route::get('about','PagesController@about'); 
+//php artisan route:list or cache
+//to see list of routes
+Route::get('about','PagesController@about');
 Route::get('contact','PagesController@contact');
 
-//Route::get('budgets', 'BudgetController@index');
-//Route::get('budgets/create','BudgetController@create');
-//Route::get('budgets/{id}', 'BudgetController@show');
-//Route::post('budgets', 'BudgetController@store');
-//Route::get('budgets/{id}/edit','BudgetController@edit');
+Route::get('budgets/bar_graph/{id}', ['as' => 'budgets.bar_graph', 'uses' => 'BudgetController@graph1']);
+Route::get('budgets/pie_graph/{id}', ['as' => 'budgets.pie_graph', 'uses' => 'BudgetController@graph2']);
 
 Route::resource('budgets','BudgetController');
 
+Route::model('budget', 'Budget');
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',

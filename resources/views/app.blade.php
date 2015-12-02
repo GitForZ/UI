@@ -4,12 +4,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>WhatsMyQuota</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<!-- Font Awesome Icons -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Google Charts -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,12 +32,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="{{ url('budgets') }}">
+					<img src="/logo3.png" alt="Logo" style="width:27px; height:27px; border:0; display:inline;">
+					&nbsp;&nbsp;WhatsMyQuota
+				</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ url('budgets') }}">Home</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -53,10 +60,27 @@
 		</div>
 	</nav>
 
-	<div id="content" class="col-md-4">
+	<div id="content" class="col-md-12">
+		@if (Session::has('flash_message'))
+			<!--
+			<div class="alert alert-success">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				{{Session::get('flash_message')}}
+			</div>
+			-->
+
+			<div class="alert alert-success alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert"
+						aria-hidden="true">
+					&times;
+				</button>
+				{{Session::get('flash_message')}}
+			</div>
+
+		@endif
 		@yield('content')
 	</div>
-    
+
     @yield('footer')
 
 	<!-- Scripts -->

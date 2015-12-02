@@ -10,6 +10,8 @@ class Budget extends Model {
 	protected $dates = ['today'];
 	
 	protected $fillable = [
+		'balance',
+		'income',
 		'housing',
 		'utilities',
 		'food',
