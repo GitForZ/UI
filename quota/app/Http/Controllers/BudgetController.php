@@ -5,6 +5,7 @@ use Request;
 use App\Budget;
 use App\Http\Requests\BudgetRequest;
 use Auth;
+use Session;
 
 class BudgetController extends Controller {
 
@@ -33,10 +34,10 @@ class BudgetController extends Controller {
 	public function show(Budget $budget) {
 		$todayNice = self::niceDate($budget->today);
 		//echo $budget;
-		$expenses = $budget->housing + $budget->utilities + $budget->food
-			+ $budget->debt + $budget->transportation + $budget->fun;
-		$net = $budget->income-$expenses;
-		$newBalance = $budget->balance + $net;
+		$expenses = money_format('%i',$budget->housing + $budget->utilities + $budget->food
+			+ $budget->debt + $budget->transportation + $budget->fun);
+		$net = money_format('%i',$budget->income-$expenses);
+		$newBalance = money_format('%i',$budget->balance + $net);
 		return view('budgets.show',compact('budget','todayNice','expenses','net','newBalance'));
 	}
 	/**
@@ -77,7 +78,7 @@ class BudgetController extends Controller {
 	 * @return mixed
 	 */
 	public function create() {
-		return view('budgets.create'); 
+		return view('budgets.create');
 	}
 
 	/**
@@ -101,10 +102,55 @@ class BudgetController extends Controller {
     }
 
 	public function niceDate($theDate) {
+
+
+
 		$pieces = explode("-",$theDate);
+
 		$year = $pieces[0];
 		$month = $pieces[1];
-		$final = $month . '/' . $year;
+
+
+
+		switch (intval($month)) {
+			case 1:
+				$month="January";
+				break;
+			case 2:
+				$month="Feburary";
+				break;
+			case 3:
+				$month="March";
+				break;
+			case 4:
+				$month="April";
+				break;
+			case 5:
+				$month="May";
+				break;
+			case 6:
+				$month="June";
+				break;
+			case 7:
+				$month="July";
+				break;
+			case 8:
+				$month="August";
+				break;
+			case 9:
+				$month="September";
+				break;
+			case 10:
+				$month="October";
+				break;
+			case 11:
+				$month="November";
+				break;
+			case 12:
+				$month="December";
+				break;
+		}
+		$final = $month . ' ' . $year;
 		return $final;
 	}
 

@@ -71,6 +71,11 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+
+form{
+  max-width:500px;
+}
+
 mark {
   background: #ff0;
   color: #000;

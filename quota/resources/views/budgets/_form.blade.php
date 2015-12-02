@@ -1,3 +1,8 @@
+
+<div class="jumbotron">
+<h2>Income</h2>
+</div>
+
 <div class="form-group">
     {!! Form::label('balance', 'Balance:') !!}
     {!! Form::text('balance', null, ['class' => 'form-control', 'type' => 'number']) !!}
@@ -6,6 +11,10 @@
 <div class="form-group">
     {!! Form::label('income', 'Income:') !!}
     {!! Form::text('income', null, ['class' => 'form-control', 'type' => 'number']) !!}
+</div>
+
+<div class="jumbotron">
+<h2>Expenses</h2>
 </div>
 
 <div class="form-group">

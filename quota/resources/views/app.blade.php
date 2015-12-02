@@ -21,8 +21,8 @@
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -36,7 +36,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="{{ url('budgets') }}">
-					<img src="/logo3.png" alt="Logo" style="width:27px; height:27px; border:0; display:inline;">
+					<img src="{{ asset('logo3.png') }}" alt="Logo" style="width:27px; height:27px; border:0; display:inline;">
 					&nbsp;&nbsp;WhatsMyQuota
 				</a>
 			</div>

@@ -4,6 +4,18 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+	<div class="jumbotron">
+		<h1>WhatsMyQuota</h1>
+		<p>WhatsMyQuota is a web application that will help you manage your budgets
+		   and stay on top of your finances. With our app you can create multiple budgets,
+		   edit them at anytime, and view a report on each budget for their corresponding month.
+		   Sign up for free and get started today!</p>
+	</div>
+	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">Login</div>
 				<div class="panel-body">

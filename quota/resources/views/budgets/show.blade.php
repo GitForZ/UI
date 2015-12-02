@@ -5,7 +5,9 @@
             color: whitesmoke;
         }
     </style>
+    <div class="jumbotron">
 <h1>{{$todayNice}}</h1>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <table class="table">
@@ -17,12 +19,12 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Balance:</td>
-                    <td>{{$budget->balance}}</td>
+                    <td><b>Balance:</b></td>
+                    <td>${{$budget->balance}}</td>
                 </tr>
                 <tr>
-                    <td>Monthly Income:</td>
-                    <td>{{$budget->income}}</td>
+                    <td><b>Monthly Income:</b></td>
+                    <td>${{$budget->income}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -39,31 +41,31 @@
                 <tbody>
                 <tr>
                     <td>Housing:</td>
-                    <td>{{$budget->housing}}</td>
+                    <td>${{$budget->housing}}</td>
                 </tr>
                 <tr>
                     <td>Utilities:</td>
-                    <td>{{$budget->utilities}}</td>
+                    <td>${{$budget->utilities}}</td>
                 </tr>
                 <tr>
                     <td>Food:</td>
-                    <td>{{$budget->food}}</td>
+                    <td>${{$budget->food}}</td>
                 </tr>
                 <tr>
                     <td>Debt:</td>
-                    <td>{{$budget->debt}}</td>
+                    <td>${{$budget->debt}}</td>
                 </tr>
                 <tr>
                     <td>Transportation:</td>
-                    <td>{{$budget->transportation}}</td>
+                    <td>${{$budget->transportation}}</td>
                 </tr>
                 <tr>
                     <td>Fun:</td>
-                    <td>{{$budget->fun}}</td>
+                    <td>${{$budget->fun}}</td>
                 </tr>
                 <tr>
-                    <td>Total:</td>
-                    <td>{{$expenses}}</td>
+                    <td><b>Total:</b></td>
+                    <td>${{$expenses}}</td>
                 </tr>
                 </tbody>
             </table>
@@ -79,12 +81,12 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Net income:</td>
-                    <td>{{$net}}</td>
+                    <td><b>Net income:</b></td>
+                    <td>${{$net}}</td>
                 </tr>
                 <tr>
-                    <td>Net balance:</td>
-                    <td>{{$newBalance}}</td>
+                    <td><b>Net balance:</b></td>
+                    <td>${{$newBalance}}</td>
                 </tr>
                 </tbody>
             </table>
