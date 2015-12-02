@@ -1,8 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Request;
 use App\Budget;
 use App\Http\Requests\BudgetRequest;
@@ -19,13 +17,12 @@ class BudgetController extends Controller {
 	 */
 	public function index() {
 		$userID = Auth::user()->id;
-		$budgets = Budget::where('user_id','=',$userID)->get();
+		$budgets = Budget::latest()->where('user_id','=',$userID)->get();
 		$array = array();
 		foreach ($budgets as $budget) {
 			$todayNice = self::niceDate($budget->today);
 			array_push($array,$todayNice);
 		}
-
 		return view('budgets.index',compact('budgets','array'));
 	}
 
@@ -35,14 +32,51 @@ class BudgetController extends Controller {
 	 */
 	public function show(Budget $budget) {
 		$todayNice = self::niceDate($budget->today);
-		return view('budgets.show',compact('budget','todayNice'));
+		//echo $budget;
+		$expenses = $budget->housing + $budget->utilities + $budget->food
+			+ $budget->debt + $budget->transportation + $budget->fun;
+		$net = $budget->income-$expenses;
+		$newBalance = $budget->balance + $net;
+		return view('budgets.show',compact('budget','todayNice','expenses','net','newBalance'));
+	}
+	/**
+	 * @param $id
+	 * @return mixed
+	 */
+	public function graph1($budgetID) {
+		//$todayNice = self::niceDate($budget->today);
+		$budget = Budget::find(@$budgetID);
+		$expenses = $budget->housing + $budget->utilities + $budget->food
+			+ $budget->debt + $budget->transportation + $budget->fun;
+		$net = $budget->income-$expenses;
+		$newBalance = $budget->balance + $net;
+		//echo $budget;
+		return view('budgets.bar_graph',compact('budget', 'expenses','net', 'newBalance'));
+	}
+	public function graph2($budgetID) {
+		//$todayNice = self::niceDate($budget->today);
+		$budget = Budget::find(@$budgetID);
+		$expenses = $budget->housing + $budget->utilities + $budget->food
+			+ $budget->debt + $budget->transportation + $budget->fun;
+		$net = $budget->income-$expenses;
+		$newBalance = $budget->balance + $net;
+		//echo $budget;
+		return view('budgets.pie_graph',compact('budget', 'expenses','net', 'newBalance'));
+	}
+
+	/**
+	 * @param $id
+	 * @return mixed
+	 */
+	public function destroy(Budget $budget) {
+		$budget->delete();
+		return redirect('budgets');
 	}
 
 	/**
 	 * @return mixed
 	 */
 	public function create() {
-
 		return view('budgets.create'); 
 	}
 
@@ -52,6 +86,7 @@ class BudgetController extends Controller {
 	public function store(BudgetRequest $request) {
         $budget = new Budget($request->all());
         Auth::user()->budgets()->save($budget);
+		Session::flash('flash_message', 'Budget has been created!');
 		return redirect('budgets');
 	}
 
