@@ -1,5 +1,5 @@
 @extends('app')
-
+​
 @section('content')
     <div class ="body">
         <head>
@@ -17,7 +17,12 @@
                         ['Fun', {{$budget->fun}}]
                     ]);
                     var options = {
-                        title: 'Budget', is3D: true
+                        title: 'Budget',
+                        titleTextStyle: {color: 'white'},
+                        is3D: true,
+                        font:{color: 'white'},
+                        backgroundColor: '#272B30',
+                        legend: {textStyle: {color: 'white'}}
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
                     chart.draw(data, options);

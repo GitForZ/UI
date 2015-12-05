@@ -4,12 +4,12 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('balance', 'Balance:') !!}
+    {!! Form::label('balance', 'Current Balance:') !!}
     {!! Form::text('balance', null, ['class' => 'form-control', 'type' => 'number']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('income', 'Income:') !!}
+    {!! Form::label('income', 'Monthly Income:') !!}
     {!! Form::text('income', null, ['class' => 'form-control', 'type' => 'number']) !!}
 </div>
 

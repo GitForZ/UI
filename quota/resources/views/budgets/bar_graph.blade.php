@@ -48,10 +48,14 @@
 //                        2]);
                     var options = {
                         title: "Budget",
+                        titleTextStyle: {color: 'white'},
                         width: 900,
                         height: 500,
+                        backgroundColor: '#272B30',
                         bar: {groupWidth: "75%"},
                         legend: { position: "none" },
+                        hAxis: { textStyle: { color: 'white', fontName: 'Arial', fontSize: '12', paddingRight: '105', marginRight: '100'} },
+                        vAxis: { textStyle: { color: 'white', fontName: 'Arial', fontSize: '14', paddingRight: '105', marginRight: '100'} },
                     };
                     var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
                     chart.draw(view, options);

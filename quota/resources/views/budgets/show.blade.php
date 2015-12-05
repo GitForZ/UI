@@ -7,31 +7,13 @@
     </style>
     <div class="jumbotron">
 <h1>{{$todayNice}}</h1>
+        <h2>Balance: ${{$budget->balance}}</h2>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Income</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><b>Balance:</b></td>
-                    <td>${{$budget->balance}}</td>
-                </tr>
-                <tr>
-                    <td><b>Monthly Income:</b></td>
-                    <td>${{$budget->income}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div class="col-md-4">
-            <table class="table">
+
+            <table class="table" >
                 <thead>
                 <tr>
                     <th>Expenses</th>
@@ -63,13 +45,10 @@
                     <td>Fun:</td>
                     <td>${{$budget->fun}}</td>
                 </tr>
-                <tr>
-                    <td><b>Total:</b></td>
-                    <td>${{$expenses}}</td>
-                </tr>
                 </tbody>
             </table>
         </div>
+
 
         <div class="col-md-4">
             <table class="table">
@@ -81,43 +60,52 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><b>Net income:</b></td>
+                    <td>Monthly income:</td>
+                    <td>${{$budget->income}}</td>
+                </tr>
+                <tr>
+                    <td>Monthly expenses:</td>
+                    <td>${{$expenses}}</td>
+                </tr>
+                <tr>
+                    <td>Net income:</td>
                     <td>${{$net}}</td>
                 </tr>
                 <tr>
-                    <td><b>Net balance:</b></td>
+                    <td>Net balance:</td>
                     <td>${{$newBalance}}</td>
                 </tr>
                 </tbody>
             </table>
-        </div>
+            <div style="float: right">
 
-    </div>
-
-    <div style="float: right">
-
-        <a href="" target="_blank" style="color: deepskyblue;">
+                <a href="" target="_blank" style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-line-chart fa-stack-1x"></i>
         </span>
-        </a>
+                </a>
 
-        <a href="{{ url('/budgets/pie_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
+                <a href="{{ url('/budgets/pie_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-pie-chart fa-stack-1x"></i>
         </span>
-        </a>
+                </a>
 
-        <a href="{{ url('/budgets/bar_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
+                <a href="{{ url('/budgets/bar_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-bar-chart fa-stack-1x"></i>
         </span>
-        </a>
+                </a>
+
+            </div>
+        </div>
 
     </div>
+
+
     <div>
         <script type="text/javascript">
             google.load("visualization", "1.1", {packages:["table"]});
@@ -179,11 +167,11 @@
     <div id="monthly_div" style="display:inline; float: left; padding-right: 10px"></div>
         <div id="buttons" style="display:inline; float: left; padding-right: 10px">
             {!! Form::open(['url' => "budgets/$budget->id/edit", 'method' => 'GET'] ) !!}
-            {!! Form::submit('Edit', ['class'=>'btn btn-success btn-mini']) !!}
+            {!! Form::submit('Edit', ['class'=>'btn btn-success btn-mini','style'=>'max-width:50']) !!}
             {!! Form::close() !!}
 
             {!! Form::open(['action' => ['BudgetController@destroy', $budget->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-mini']) !!}
+            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-mini','style'=>'max-width:50']) !!}
             {!! Form::close() !!}
         </div>
     </div>

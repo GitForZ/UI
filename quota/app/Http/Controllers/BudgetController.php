@@ -20,11 +20,13 @@ class BudgetController extends Controller {
 		$userID = Auth::user()->id;
 		$budgets = Budget::latest()->where('user_id','=',$userID)->get();
 		$array = array();
+		$array_balances = array();
 		foreach ($budgets as $budget) {
 			$todayNice = self::niceDate($budget->today);
 			array_push($array,$todayNice);
+			array_push($array_balances,$budget->balance);
 		}
-		return view('budgets.index',compact('budgets','array'));
+		return view('budgets.index',compact('budgets','array','array_balances'));
 	}
 
 	/**
