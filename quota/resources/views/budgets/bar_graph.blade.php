@@ -47,10 +47,8 @@
 //                            role: "annotation" },
 //                        2]);
                     var options = {
-                        title: "Budget",
+                        title: "Expenses",
                         titleTextStyle: {color: 'white'},
-                        width: 900,
-                        height: 500,
                         backgroundColor: '#272B30',
                         bar: {groupWidth: "75%"},
                         legend: { position: "none" },
@@ -62,6 +60,14 @@
                 }
             </script>
         </head>
-        <body><div id="columnchart_values" style="width: 900px; height: 300px;"></div></body>
+        <body>
+
+        <div class="row">
+            <div class="col-md-6">
+        <div id="columnchart_values" style="width: 100%; height: 100%"></div>
+            </div>
+        </div>
+
+        </body>
     </div>
 @stop

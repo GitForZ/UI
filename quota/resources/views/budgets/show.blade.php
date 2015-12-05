@@ -79,21 +79,21 @@
             </table>
             <div style="float: right">
 
-                <a href="" target="_blank" style="color: deepskyblue;">
+                <a href=""  style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-line-chart fa-stack-1x"></i>
         </span>
                 </a>
 
-                <a href="{{ url('/budgets/pie_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
+                <a href="{{ url('/budgets/pie_graph',$budget->id) }}" style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-pie-chart fa-stack-1x"></i>
         </span>
                 </a>
 
-                <a href="{{ url('/budgets/bar_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
+                <a href="{{ url('/budgets/bar_graph',$budget->id) }}" style="color: deepskyblue;">
         <span class="fa-stack fa-2x">
             <i class="fa fa-square-o fa-stack-2x"></i>
             <i class="fa fa-bar-chart fa-stack-1x"></i>

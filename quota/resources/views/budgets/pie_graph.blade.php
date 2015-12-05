@@ -17,9 +17,10 @@
                         ['Fun', {{$budget->fun}}]
                     ]);
                     var options = {
-                        title: 'Budget',
+                        title: 'Expenses',
                         titleTextStyle: {color: 'white'},
                         is3D: true,
+                        'chartArea': {'width': '100%', 'height': '80%'},
                         font:{color: 'white'},
                         backgroundColor: '#272B30',
                         legend: {textStyle: {color: 'white'}}
@@ -30,7 +31,11 @@
             </script>
         </head>
         <body>
-        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+        <div class="row">
+            <div class="col-md-6">
+        <div id="piechart_3d" style="width: 100%; height: 70%;"></div>
+            </div>
+        </div>
         </body>
     </div>
 @stop
