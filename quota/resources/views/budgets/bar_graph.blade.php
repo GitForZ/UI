@@ -6,27 +6,26 @@
             <script type="text/javascript">
                 google.load("visualization", "1", {packages:["corechart"]});
                 ////////////////////////////////////////////////////////////////////
-                function initialize() {
-                    var opts = {sendMethod: 'auto'};
-                    // Replace the data source URL on next line with your data source URL.
-                    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1vajOxUKDhtmU-E6MWOcEywZ7YZn_VJh0USbQew1HlZQ/edit#gid=0&vpid=A1', opts);
-                    // Send the query with a callback function.
-                    query.send(handleQueryResponse);
-                }
-
-                function handleQueryResponse(response) {
-                    if (response.isError()) {
-                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                        return;
-                    }
-                    var data = response.getDataTable();
-                    var options = {
-                        title: 'Company Performance'
-                    };
-                    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-                    chart.draw(data, options);
-                }
-
+//                function initialize() {
+//                    var opts = {sendMethod: 'auto'};
+//                    // Replace the data source URL on next line with your data source URL.
+//                    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1vajOxUKDhtmU-E6MWOcEywZ7YZn_VJh0USbQew1HlZQ/edit#gid=0&vpid=A1', opts);
+//                    // Send the query with a callback function.
+//                    query.send(handleQueryResponse);
+//                }
+//
+//                function handleQueryResponse(response) {
+//                    if (response.isError()) {
+//                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+//                        return;
+//                    }
+//                    var data = response.getDataTable();
+//                    var options = {
+//                        title: 'Company Performance'
+//                    };
+//                    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+//                    chart.draw(data, options);
+//                }
                 /////////////////////////////////////////////////////////////////////
                 google.setOnLoadCallback(drawChart);
                 function drawChart() {
@@ -40,17 +39,17 @@
                         ['Fun:', {{$budget->fun}}, 'purple'],
                     ]);
                     var view = new google.visualization.DataView(data);
-//                    view.setColumns([0, 1,
-//                        { calc: "stringify",
-//                            sourceColumn: 1,
-//                            type: "string",
-//                            role: "annotation" },
-//                        2]);
                     var options = {
                         title: "Expenses",
                         titleTextStyle: {color: 'white'},
                         backgroundColor: '#272B30',
                         bar: {groupWidth: "75%"},
+                        chartArea: {
+                            left: "10%",
+                            top: "10%",
+                            height: "80%",
+                            width: "100%"
+                        },
                         legend: { position: "none" },
                         hAxis: { textStyle: { color: 'white', fontName: 'Arial', fontSize: '12', paddingRight: '105', marginRight: '100'} },
                         vAxis: { textStyle: { color: 'white', fontName: 'Arial', fontSize: '14', paddingRight: '105', marginRight: '100'} },
@@ -64,7 +63,7 @@
 
         <div class="row">
             <div class="col-md-6">
-        <div id="columnchart_values" style="width: 100%; height: 100%"></div>
+                <div id="columnchart_values" style="width: 100%; height: 100%"></div>
             </div>
         </div>
 
