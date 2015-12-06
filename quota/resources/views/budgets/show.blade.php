@@ -1,14 +1,23 @@
 @extends('app')
 @section('content')
+
+
+
+<div class="container">
     <style>
         .fa-stack:hover {
             color: whitesmoke;
         }
     </style>
     <div class="jumbotron">
-<h1>{{$todayNice}}</h1>
+<h1>{{$budget->title}}</h1>
         <h2>Balance: ${{$budget->balance}}</h2>
+
     </div>
+
+    <b>Created:</b> {{$budget->created_at}}<br>
+    <b>Updated:</b> {{$budget->updated_at}}<br><br>
+
     <div class="row">
         <div class="col-md-4">
 
@@ -77,19 +86,28 @@
                 </tr>
                 </tbody>
             </table>
+
+        </div>
+
+        <div class="col-md-4">
+
             <div style="float: right">
-                <a href="{{ url('/budgets/pie_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-pie-chart fa-stack-1x"></i>
-                    </span>
+                
+
+                <a href="{{ url('/budgets/pie_graph',$budget->id) }}" style="color: deepskyblue;">
+        <span class="fa-stack fa-2x">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-pie-chart fa-stack-1x"></i>
+        </span>
                 </a>
-                <a href="{{ url('/budgets/bar_graph',$budget->id) }}" target="_blank" style="color: deepskyblue;">
-                    <span class="fa-stack fa-2x">
-                        <i class="fa fa-square-o fa-stack-2x"></i>
-                        <i class="fa fa-bar-chart fa-stack-1x"></i>
-                    </span>
+
+                <a href="{{ url('/budgets/bar_graph',$budget->id) }}"  style="color: deepskyblue;">
+        <span class="fa-stack fa-2x">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-bar-chart fa-stack-1x"></i>
+            </span>
                 </a>
+
             </div>
         </div>
 
@@ -157,15 +175,29 @@
     <div id="monthly_div" style="display:inline; float: left; padding-right: 10px"></div>
         <div id="buttons" style="display:inline; float: left; padding-right: 10px">
             {!! Form::open(['url' => "budgets/$budget->id/edit", 'method' => 'GET'] ) !!}
-            {!! Form::submit('Edit', ['class'=>'btn btn-success btn-mini','style'=>'max-width:50']) !!}
+            {!! Form::submit('Edit', ['class'=>'btn btn-success btn-mini','style'=>'width:100px']) !!}
             {!! Form::close() !!}
 
-            {!! Form::open(['action' => ['BudgetController@destroy', $budget->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-mini','style'=>'max-width:50']) !!}
+            {!! Form::open(['action' => ['BudgetController@destroy', $budget->id], 'method' => 'delete', 'id' => 'FormDeleteTime']) !!}
+            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-mini','style'=>'width:100px']) !!}
             {!! Form::close() !!}
+            <script type="text/javascript">
+                $("#FormDeleteTime").submit(function (event) {
+                    var x = confirm("Are you sure you want to delete?");
+                    if (x) {
+                        return true;
+                    }
+                    else {
+
+                        event.preventDefault();
+                        return false;
+                    }
+
+                });
+            </script>
         </div>
     </div>
 
-
+</div>
 @stop
 

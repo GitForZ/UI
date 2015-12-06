@@ -35,6 +35,13 @@ class PagesController extends Controller {
 		return view('pages.contact'); 
 		
 	}
-	
+
+	public function home() {
+		return view('pages.home');
+	}
+
+	public function help() {
+		return view('pages.help');
+	}
 
 }

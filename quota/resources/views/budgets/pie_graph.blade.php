@@ -1,7 +1,7 @@
 @extends('app')
 ​
 @section('content')
-    <div class ="body">
+    <div class ="container">
         <head>
             <script type="text/javascript">
                 google.load("visualization", "1", {packages:["corechart"]});
@@ -20,7 +20,6 @@
                         title: 'Expenses',
                         titleTextStyle: {color: 'white'},
                         is3D: true,
-                        'chartArea': {'width': '100%', 'height': '80%'},
                         font:{color: 'white'},
                         backgroundColor: '#272B30',
                         legend: {textStyle: {color: 'white'}}
@@ -32,9 +31,9 @@
         </head>
         <body>
         <div class="row">
-            <div class="col-md-6">
-        <div id="piechart_3d" style="width: 100%; height: 70%;"></div>
-            </div>
+
+                <div id="piechart_3d" style="width: 100%; height: 100%;"></div>
+            
         </div>
         </body>
     </div>

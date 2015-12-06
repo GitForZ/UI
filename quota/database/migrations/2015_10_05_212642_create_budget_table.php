@@ -14,6 +14,7 @@ class CreateBudgetTable extends Migration {
 	{
 		Schema::create('budget', function(Blueprint $table)
 		{
+			$table->string('title');
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->decimal('balance',13,2);

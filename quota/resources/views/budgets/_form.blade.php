@@ -1,6 +1,17 @@
 
+
+
 <div class="jumbotron">
-<h2>Income</h2>
+    <h4>Title</h4>
+</div>
+
+<div class="form-group">
+    {!! Form::label('title', 'Title:') !!}
+    {!! Form::text('title', $setTitle, ['class' => 'form-control', 'type' => 'text']) !!}
+</div>
+
+<div class="jumbotron">
+<h4>Income</h4>
 </div>
 
 <div class="form-group">
@@ -14,7 +25,7 @@
 </div>
 
 <div class="jumbotron">
-<h2>Expenses</h2>
+<h4>Expenses</h4>
 </div>
 
 <div class="form-group">

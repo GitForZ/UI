@@ -36,14 +36,10 @@ class BudgetController extends Controller {
 	public function show(Budget $budget) {
 		$todayNice = self::niceDate($budget->today);
 		//echo $budget;
-//		$expenses = money_format('%i',$budget->housing + $budget->utilities + $budget->food
-//			+ $budget->debt + $budget->transportation + $budget->fun);
-//		$net = money_format('%i',$budget->income-$expenses);
-//		$newBalance = money_format('%i',$budget->balance + $net);
-		$expenses = $budget->housing + $budget->utilities + $budget->food
-			+ $budget->debt + $budget->transportation + $budget->fun;
-		$net = $budget->income-$expenses;
-		$newBalance = $budget->balance + $net;
+		$expenses = money_format('%i',$budget->housing + $budget->utilities + $budget->food
+			+ $budget->debt + $budget->transportation + $budget->fun);
+		$net = money_format('%i',$budget->income-$expenses);
+		$newBalance = money_format('%i',$budget->balance + $net);
 		return view('budgets.show',compact('budget','todayNice','expenses','net','newBalance'));
 	}
 	/**
@@ -108,9 +104,16 @@ class BudgetController extends Controller {
     }
 
 	public function niceDate($theDate) {
+
+
+
 		$pieces = explode("-",$theDate);
+
 		$year = $pieces[0];
 		$month = $pieces[1];
+
+
+
 		switch (intval($month)) {
 			case 1:
 				$month="January";

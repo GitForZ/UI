@@ -1,23 +1,46 @@
-@extends('app'); 
+@extends('app')
 
 @section('content')
 
+<div class="container">
+<h1>Getting Started</h1>
 
-<h1>About</h1>
+<a href="http://m.wikihow.com/Do-a-Monthly-Budget" target="_blank">Budget Basics</a>
 
-<h3> Features </h3>
+<h2>Create a Budget:</h2>
+<ul>
+    <li>1. Go to the homepage</li>
+    <li>2. Click create</li>
+    <li>3. Fill in your current balance and monthly income</li>
+    <li>4. Log your current expenses for the month/budget</li>
+</ul>
 
-@if (count($features))
+<h2>View Report</h2>
     <ul>
-        @foreach ($features as $feature) 
-            <li> {{ $feature }} </li>
-        @endforeach
+
+        <li>1. Go to homepage and click a budget</li>
+        <li>2. Here you can see a breakdown of your budget
+        <ul>
+            <li>From here you can also view a bar chart and pie chart of expenses</li>
+            <li>From here you can also delete or update budget to add onto expenses or if you made a mistake</li>
+        </ul>
+
+        </li>
     </ul>
-@endif
+<h1>Planned Implementation</h1>
+<ul>
+    <li>Change title of budgets and make unique</li>
+    <li>Easier adding of expenses to current budget</li>
+    <li>Add your own columns/categories to budget</li>
+    <li>Possibly have balance carry over to other budgets although could restrict things</li>
+    <li>More charts and report information. </li>
+</ul>
 
+    <p>At the moment the way you add an expense or income is by editing the values of the current budget. Ideally
+    we would like to make it so that you have individual expenses within each category and also add your own
+    categories. We'd like to make it so that when you go to your edit budget you simply click a button to add a expense
+    or inflow and it will reflect changes to total expenses/etc.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet nisi justo. Nullam tempor semper lacus nec accumsan. In id libero at ante auctor scelerisque sed vitae tortor. Maecenas eleifend condimentum ex non hendrerit. Mauris vitae interdum ligula, vitae maximus arcu. Nam a eleifend urna. Aenean eu libero dolor. In sapien enim, feugiat sed erat tincidunt, egestas gravida leo. Nullam eleifend velit eget nisl porttitor maximus. Vivamus convallis sem in aliquet consectetur. Maecenas dictum lorem sed nisi gravida consectetur. Pellentesque in mi scelerisque, eleifend felis ut, placerat leo. Cras accumsan urna in turpis bibendum, imperdiet vestibulum lorem molestie. Curabitur dolor lacus, egestas sed aliquam et, blandit sed elit. Sed sollicitudin lectus ut finibus rhoncus. Nulla dignissim porta placerat.
-
-Nam vel enim sed tellus pretium dignissim. Praesent eget pellentesque purus. Donec ultrices ipsum id imperdiet tincidunt. Suspendisse blandit sem et sem scelerisque vestibulum. Cras at massa elementum, placerat tellus non, volutpat leo. Etiam porta odio sit amet purus sodales, et aliquet lectus volutpat. Nullam volutpat metus velit, eget vehicula dui dignissim vitae. Phasellus et pulvinar justo. Aliquam ligula ligula, sagittis ut tellus at, lobortis consectetur risus. Cras tincidunt suscipit neque, a tristique nibh lobortis molestie. Vestibulum maximus commodo lacus, in tristique dolor congue at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ligula lorem, gravida non erat in, tincidunt porta diam. Duis vehicula sem in leo varius iaculis.</p>
 @stop
+</div>
 

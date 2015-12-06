@@ -1,15 +1,15 @@
 @extends('app')
 
 @section('content')
-
+<div class="container">
     <div class="jumbotron">
-    <h1>Edit {!! $todayNice !!}</h1>
+    <h2>Edit: {{$budget->title}}</h2>
     </div>
 
     {!! Form::model($budget,['method' => 'PATCH', 'action' => ['BudgetController@update', $budget->id]]) !!}
-        @include ('budgets._form', ['submitButtonText' => 'Update Budget'])
+        @include ('budgets._form', ['submitButtonText' => 'Update Budget','setTitle'=>null])
     {!! Form::close() !!}
 
     @include('errors.list')
-
+</div>
 @stop
